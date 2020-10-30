@@ -4,9 +4,13 @@ import './index.css';
 
 function Checkbox() {
     const [checked, setChecked] = useState(false);
+
+    alert(`checked: ${checked.toString()}`);
     return (
         <>
-          <input type="checkbox" value={checked} />
+          <input type="checkbox" 
+          value={checked} 
+          onchange={ ()=> setChecked(checked => !checked)}/>
           {checked ? "checked" : "not checked"}
         </>
     );
