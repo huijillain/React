@@ -15,13 +15,18 @@ function GitHubUser({ login }) {
    }, []);
 
    if(data) {
-       return <div>{JSON.stringify(data)}</div>;
+       return (
+       <div>
+           <h1>{data.login}</h1>
+           <img src={data.avatar_url} width={100} />
+           </div>
+       );
    }
    return null;
 }
 
 function App() {
-       return <GitHubUser login="huijillain" />;
+       return <GitHubUser login="crystallava" />;
 }
 
 ReactDOM.render(
