@@ -1,28 +1,14 @@
-import React, {
-    useReducer,
-} from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
+import React from 'react'
+import ReactDOM from 'react-dom'
 
-function Checkbox() {
-    const [checked, toggle] = useReducer(
-        checked => !checked, 
-        false
-        );
-
-    return (
-       <>
-       <input 
-       type="checkbox" 
-       value={checked}
-       onChange={toggle}
-        />
-       {checked ? "checked" : "not checked"}
-       </>
-    );
+class Message extends React.Component {
+    render() {
+        return (
+            <div>
+                <h1>Hello Everyone</h1>
+            </div>
+        )
+    }
 }
 
-ReactDOM.render(
-    <Checkbox />,
-    document.getElementById('root')
-);
+ReactDOM.render(<Message />, document.getElementById('root'))
