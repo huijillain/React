@@ -1,6 +1,7 @@
 //import logo from "./logo.svg";
 import React from "react";
 import "./App.css";
+import restaurant from "./restaurant.jpg";
 
 // function App() {
 //   return (
@@ -45,6 +46,13 @@ function Main(props) {
   return (
     <section>
       <p>We serve the most {props.adjective} food around.</p>
+      {/* <img src="https://github.com/huijillain.png" height={200} /> */}
+      <img
+        src={restaurant}
+        height={200}
+        alt="napkin and silverware at a restaurant table"
+      />
+      {/* <img src={restaurant} /> */}
       {/* <ul>
         {props.dishes.map((dish) => (
           <li>{dish}</li>
