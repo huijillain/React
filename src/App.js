@@ -46,6 +46,17 @@ function Main(props) {
   return (
     <section>
       <p>We serve the most {props.adjective} food around.</p>
+      {/* <ul>
+        {props.dishes.map((dish) => (
+          <li>{dish}</li>
+        ))}
+      </ul> */}
+      {/*But dots were at far left side, so changes as showing below by adding style. Be careful about textAlign JS style, not CSS text-align style.*/}
+      <ul style={{ textAlign: "left" }}>
+        {props.dishes.map((dish) => (
+          <li>{dish}</li>
+        ))}
+      </ul>
     </section>
   );
 }
@@ -72,6 +83,10 @@ function Footer(props) {
 //   );
 // }
 
+const dishes = ["Mcaroni and Cheese", "Salmon Sushi", "Eggplants Hot Pot"];
+
+// dishes.map((dish) => console.log(dish));
+
 // Add one function, then add inside App below.
 function App() {
   return (
@@ -79,7 +94,7 @@ function App() {
       {/* <h1>Header</h1> */}
       <Header name="Cindy" />
       {/* <h2>Main</h2> */}
-      <Main adjective="amazing" />
+      <Main adjective="amazing" dishes={dishes} />
       {/* <h3>Footer</h3> */}
       <Footer year={new Date().getFullYear()} />
     </div>
