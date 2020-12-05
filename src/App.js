@@ -1,6 +1,7 @@
 //import logo from "./logo.svg";
 import React from "react";
 import "./App.css";
+import "./index.css";
 import restaurant from "./restaurant.jpg";
 
 // function App() {
