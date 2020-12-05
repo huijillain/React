@@ -27,7 +27,6 @@ import "./App.css";
 // We can find "Header" in Components already if we right click mouse then click inspect.
 // Pass props into this function. The props object is going to hold all of different properties for the component.
 function Header(props) {
-  console.log(props);
   return (
     <header>
       <h1>{props.name}'s Kitchen</h1>
@@ -54,7 +53,7 @@ function Main(props) {
       {/*But dots were at far left side, so changes as showing below by adding style. Be careful about textAlign JS style, not CSS text-align style.*/}
       <ul style={{ textAlign: "left" }}>
         {props.dishes.map((dish) => (
-          <li>{dish}</li>
+          <li key={dish.id}>{dish.title}</li>
         ))}
       </ul>
     </section>
@@ -83,8 +82,15 @@ function Footer(props) {
 //   );
 // }
 
-const dishes = ["Mcaroni and Cheese", "Salmon Sushi", "Eggplants Hot Pot"];
+const dishes = [
+  "Mcaroni and Cheese",
+  "Salmon Sushi",
+  "Eggplants Hot Pot",
+  "Rice with Blackbean",
+];
 
+const dishObjects = dishes.map((dish, i) => ({ id: i, title: dish }));
+console.log(dishObjects);
 // dishes.map((dish) => console.log(dish));
 
 // Add one function, then add inside App below.
@@ -94,7 +100,7 @@ function App() {
       {/* <h1>Header</h1> */}
       <Header name="Cindy" />
       {/* <h2>Main</h2> */}
-      <Main adjective="amazing" dishes={dishes} />
+      <Main adjective="amazing" dishes={dishObjects} />
       {/* <h3>Footer</h3> */}
       <Footer year={new Date().getFullYear()} />
     </div>
