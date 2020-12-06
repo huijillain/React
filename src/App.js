@@ -7,17 +7,31 @@ import "./App.css";
 // import "./index.css";
 // import restaurant from "./restaurant.jpg";
 import { Routes, Route } from "react-router-dom";
-import { Home, About, Events, Contact, Whoops404 } from "./pages";
+import {
+  Home,
+  About,
+  Events,
+  Contact,
+  Whoops404,
+  Services,
+  CompanyHistory,
+  Location,
+} from "./pages";
 
 // Till we install React Router 6, we had all single page. Use React Router to create multiple pages by editing App.js & pages.js
 
 // Configuring the router
+// Added services, companyHisotry, location under About Route
 function App() {
   return (
     <div>
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="about" element={<About />} />
+        <Route path="about" element={<About />}>
+          <Route path="services" element={<Services />} />
+          <Route path="history" element={<CompanyHistory />} />
+          <Route path="location" element={<Location />} />
+        </Route>
         <Route path="events" element={<Events />} />
         <Route path="Contact" element={<Contact />} />
         <Route path="*" element={<Whoops404 />} />
