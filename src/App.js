@@ -2,9 +2,40 @@
 // import React from "react";
 // import React, { useState } from "react";
 import React, { useState, useEffect } from "react";
+// import React, { useReducer } from "react";
 import "./App.css";
 // import "./index.css";
 // import restaurant from "./restaurant.jpg";
+
+// Incorporating useReducer
+function App({ login }) {
+  const [data, setData] = useState(null);
+
+  useEffect(() => {
+    fetch(`https://api.github.com/users/${login}`)
+      .then((response) => response.json())
+      .then(setData);
+  }, []);
+
+  if (data) {
+    return <div>{JSON.stringify(data)}</div>;
+  }
+  return <div>No User Available.</div>;
+}
+
+// function App() {
+//   const [checked, setChecked] = useState(false);
+//   return (
+//     <>
+//       <input
+//         type="checkbox"
+//         value={checked}
+//         onChange={() => setChecked((checked) => !checked)}
+//       />
+//       <p>{checked ? "checked" : "not checked"}</p>
+//     </>
+//   );
+// }
 
 // function App() {
 //   // Pass an initial state into useState funtion
@@ -16,32 +47,33 @@ import "./App.css";
 //     </>
 //   );
 // }
-function App() {
-  // Pass an initial state into useState funtion
-  const [emotion, setEmotion] = useState("happy");
-  const [secondary, setSecondary] = useState("tired");
 
-  useEffect(() => {
-    console.log(`It's ${emotion} around here!`);
-  }, [emotion]);
+// function App() {
+//   // Pass an initial state into useState funtion
+//   const [emotion, setEmotion] = useState("happy");
+//   const [secondary, setSecondary] = useState("tired");
 
-  useEffect(() => {
-    console.log(`It's ${secondary} around here!`);
-  }, [secondary]);
+//   useEffect(() => {
+//     console.log(`It's ${emotion} around here!`);
+//   }, [emotion]);
 
-  return (
-    <>
-      {/* <h1>Current emotion is {emotion}.</h1> */}
-      <h1>
-        Current emotion is {emotion} and {secondary}.
-      </h1>
-      <button onClick={() => setEmotion("excited")}>Excited</button>
-      <button onClick={() => setSecondary("crabby")}>Make Crabby</button>
-      <button onClick={() => setEmotion("frustrated")}>Frustrate</button>
-      <button onClick={() => setEmotion("enthusiastic")}>Enthuse</button>
-    </>
-  );
-}
+//   useEffect(() => {
+//     console.log(`It's ${secondary} around here!`);
+//   }, [secondary]);
+
+//   return (
+//     <>
+//       {/* <h1>Current emotion is {emotion}.</h1> */}
+//       <h1>
+//         Current emotion is {emotion} and {secondary}.
+//       </h1>
+//       <button onClick={() => setEmotion("excited")}>Excited</button>
+//       <button onClick={() => setSecondary("crabby")}>Make Crabby</button>
+//       <button onClick={() => setEmotion("frustrated")}>Frustrate</button>
+//       <button onClick={() => setEmotion("enthusiastic")}>Enthuse</button>
+//     </>
+//   );
+// }
 
 //Destructuring arrays & objects
 // function SecretComponent() {

@@ -35,6 +35,6 @@ ReactDOM.render(
 
   // <App authorized={false} />,
 
-  <App />,
+  <App login="huijillain" />,
   document.getElementById("root")
 );
