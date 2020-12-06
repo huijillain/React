@@ -7,7 +7,7 @@ export function Checkbox() {
     <>
       {/* We need to make sure there is a form control added to it. */}
       <label htmlFor="checkbox">{checked ? "checked" : "not checked"}</label>
-      <input type="checkbox" value={checked} onChange={toggle} />
+      <input id="checkbox" type="checkbox" value={checked} onChange={toggle} />
     </>
   );
 }
