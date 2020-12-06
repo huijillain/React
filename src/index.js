@@ -2,6 +2,15 @@ import React from "react";
 import ReactDOM from "react-dom";
 import "./index.css";
 import App from "./App";
+import { BrowserRouter as Router } from "react-router-dom";
+
+// React-router-dom
+ReactDOM.render(
+  <Router>
+    <App />
+  </Router>,
+  document.getElementById("root")
+);
 
 // function AppTwo() {
 //   return <h1>This is the Second App</h1>;
@@ -17,24 +26,24 @@ import App from "./App";
 // const [, , light] = ["boots", "tent", "headlamp"];
 // console.log(light);
 
-ReactDOM.render(
-  //   <div></div>
-  //     <App />
-  //     <AppTwo />
-  //   </div>,
+// ReactDOM.render(
+//   //   <div></div>
+//   //     <App />
+//   //     <AppTwo />
+//   //   </div>,
 
-  //   <React.Fragment>
-  //     <App />
-  //     <App Two />
-  //   </React.Fragment>,
+//   //   <React.Fragment>
+//   //     <App />
+//   //     <App Two />
+//   //   </React.Fragment>,
 
-  //   <>
-  //     <App />
-  //     <App Two />
-  //   </>,
+//   //   <>
+//   //     <App />
+//   //     <App Two />
+//   //   </>,
 
-  // <App authorized={false} />,
+//   // <App authorized={false} />,
 
-  <App login="huijillain" />,
-  document.getElementById("root")
-);
+//   <App login="huijillain" />,
+//   document.getElementById("root")
+// );

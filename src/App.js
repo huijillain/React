@@ -6,14 +6,31 @@
 import "./App.css";
 // import "./index.css";
 // import restaurant from "./restaurant.jpg";
+import { Routes, Route } from "react-router-dom";
+import { Home, About, Events, Contact } from "./pages";
 
+// Configuring the router
 function App() {
   return (
     <div>
-      <h1>Hello React Testing Library.</h1>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="about" element={<About />} />
+        <Route path="events" element={<Events />} />
+        <Route path="Contact" element={<Contact />} />
+      </Routes>
     </div>
   );
 }
+
+// Testing
+// function App() {
+//   return (
+//     <div>
+//       <h1>Hello React Testing Library.</h1>
+//     </div>
+//   );
+// }
 
 // // Incorporating useReducer
 // // https://api.github.com/users/huijillain
