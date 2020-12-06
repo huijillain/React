@@ -7,6 +7,16 @@ import App from "./App";
 //   return <h1>This is the Second App</h1>;
 // }
 
+// const checklist = ["boots", "tent", "headlamp"];
+// console.log(checklist[1]);
+
+// const [mostImportantItem] = ["boots", "tent", "headlamp"];
+// console.log(mostImportantItem);
+
+// assign items in array
+const [, , light] = ["boots", "tent", "headlamp"];
+console.log(light);
+
 ReactDOM.render(
   //   <div></div>
   //     <App />

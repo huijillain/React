@@ -24,8 +24,12 @@ function RegularComponent() {
 //   }
 // }
 
-function App(props) {
-  return <>{props.authorized ? <SecretComponent /> : <RegularComponent />}</>;
+// function App(props) {
+//   return <>{props.authorized ? <SecretComponent /> : <RegularComponent />}</>;
+// }
+
+function App({ authorized }) {
+  return <>{authorized ? <SecretComponent /> : <RegularComponent />}</>;
 }
 
 // function App() {
