@@ -11,24 +11,38 @@ import "./App.css";
 // https://api.github.com/users/huijillain
 function App({ login }) {
   const [data, setData] = useState(null);
+  // add loading 1 below
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState(null);
 
   useEffect(() => {
+    // add loading 2 below
+    if (!login) return;
+    setLoading(true);
+
     fetch(`https://api.github.com/users/${login}`)
       .then((response) => response.json())
-      .then(setData);
-  }, []);
+      .then(setData)
+      .then(() => setLoading(false))
+      .catch(setError);
+  }, [login]); // anytime login value changes, we call it here.
 
-  if (data) {
-    return (
-      <div>
-        <h1>{data.name}</h1>
-        <p>{data.location}</p>
-        <img alt={data.login} src={data.avatar_url} />
-      </div>
-    );
-  }
-  return <div>No User Available.</div>;
+  // handle loading
+  if (loading) return <h1>Loading...</h1>;
+  if (error) return <pre>{JSON.stringify(error, null, 2)}</pre>; // 2 is to format JSON so we can read it.
+  if (!data) return null;
+
+  // if (data) {
+  return (
+    <div>
+      <h1>{data.name}</h1>
+      <p>{data.location}</p>
+      <img alt={data.login} src={data.avatar_url} />
+    </div>
+  );
 }
+// return <div>No User Available.</div>;
+// }
 
 // function App() {
 //   const [checked, setChecked] = useState(false);
