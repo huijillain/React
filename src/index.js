@@ -14,8 +14,8 @@ import App from "./App";
 // console.log(mostImportantItem);
 
 // assign items in array
-const [, , light] = ["boots", "tent", "headlamp"];
-console.log(light);
+// const [, , light] = ["boots", "tent", "headlamp"];
+// console.log(light);
 
 ReactDOM.render(
   //   <div></div>
@@ -32,6 +32,9 @@ ReactDOM.render(
   //     <App />
   //     <App Two />
   //   </>,
-  <App authorized={false} />,
+
+  // <App authorized={false} />,
+
+  <App />,
   document.getElementById("root")
 );

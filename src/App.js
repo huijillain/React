@@ -1,16 +1,41 @@
 //import logo from "./logo.svg";
-import React from "react";
+// import React from "react";
+import React, { useState } from "react";
 import "./App.css";
 // import "./index.css";
 // import restaurant from "./restaurant.jpg";
 
-function SecretComponent() {
-  return <h1>Secret information for authorized users only</h1>;
+// function App() {
+//   // Pass an initial state into useState funtion
+//   const emotion = useState("happy");
+//   console.log(emotion);
+//   return (
+//     <>
+//       <h1>Current emotion is {emotion}.</h1>
+//     </>
+//   );
+// }
+function App() {
+  // Pass an initial state into useState funtion
+  const [emotion, setEmotion] = useState("happy");
+  return (
+    <>
+      <h1>Current emotion is {emotion}.</h1>
+      <button onClick={() => setEmotion("excited")}>Excited</button>
+      <button onClick={() => setEmotion("frustrated")}>Frustrate</button>
+      <button onClick={() => setEmotion("enthusiastic")}>Enthuse</button>
+    </>
+  );
 }
 
-function RegularComponent() {
-  return <h1>Everyone can see this component.</h1>;
-}
+//Destructuring arrays & objects
+// function SecretComponent() {
+//   return <h1>Secret information for authorized users only</h1>;
+// }
+
+// function RegularComponent() {
+//   return <h1>Everyone can see this component.</h1>;
+// }
 
 // function App() {
 //   return <div className="App">Components here eventually</div>;
@@ -28,9 +53,9 @@ function RegularComponent() {
 //   return <>{props.authorized ? <SecretComponent /> : <RegularComponent />}</>;
 // }
 
-function App({ authorized }) {
-  return <>{authorized ? <SecretComponent /> : <RegularComponent />}</>;
-}
+// function App({ authorized }) {
+//   return <>{authorized ? <SecretComponent /> : <RegularComponent />}</>;
+// }
 
 // function App() {
 //   return (
