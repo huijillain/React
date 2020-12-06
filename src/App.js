@@ -8,6 +8,7 @@ import "./App.css";
 // import restaurant from "./restaurant.jpg";
 
 // Incorporating useReducer
+// https://api.github.com/users/huijillain
 function App({ login }) {
   const [data, setData] = useState(null);
 
@@ -18,7 +19,13 @@ function App({ login }) {
   }, []);
 
   if (data) {
-    return <div>{JSON.stringify(data)}</div>;
+    return (
+      <div>
+        <h1>{data.name}</h1>
+        <p>{data.location}</p>
+        <img alt={data.login} src={data.avatar_url} />
+      </div>
+    );
   }
   return <div>No User Available.</div>;
 }
