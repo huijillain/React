@@ -1,5 +1,6 @@
 import React from "react";
-import { Link, useLocation } from "react-router-dom";
+// use useLocation hook
+import { Link, useLocation, Outlet } from "react-router-dom";
 
 // First we export function Home/About/Events/Contact() with h1 only, then we import line 2  and add links in div below.
 export function Home() {
@@ -19,6 +20,31 @@ export function About() {
   return (
     <div>
       <h1>[About]</h1>
+      <Outlet />
+    </div>
+  );
+}
+
+export function Services() {
+  return (
+    <div>
+      <h2>Our Services</h2>
+    </div>
+  );
+}
+
+export function CompanyHistory() {
+  return (
+    <div>
+      <h2>Our Company History</h2>
+    </div>
+  );
+}
+
+export function Location() {
+  return (
+    <div>
+      <h2>Our Location</h2>
     </div>
   );
 }
